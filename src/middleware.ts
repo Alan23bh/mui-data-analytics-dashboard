@@ -17,7 +17,7 @@ export default withAuth({
   },
 });
 
-export { withAuth } from "next-auth/middleware";
+export type { NextMiddlewareWithAuth } from "next-auth/middleware";
 
 export const config = {
   matcher: ["/dashboard/:path*", "/profile/:path*", "/settings/:path*"],
