@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DataSoft • Analytics Dashboard
 
-## Getting Started
+A fully responsive data analytics dashboard built with **Next.js (App Router)**, **TypeScript**, **Material UI**, **Recharts**, and **NextAuth (Google OAuth)**.
 
-First, run the development server:
+This project showcases a modern front-end stack with a protected dashboard experience, light/dark theming, and real-world UI patterns that are relevant for SaaS / internal tools.
 
-```bash
-npm run dev
-# or
+---
+
+## 🚀 Live Demo
+
+**Vercel:** https://mui-data-analytics-dashboard.vercel.app
+
+_(Best viewed on desktop, but fully responsive.)_
+
+---
+
+## ✨ Features
+
+### 🧭 Layout & Navigation
+- App Shell layout with:
+  - Persistent sidebar navigation
+  - Top AppBar with theme toggle and user avatar
+  - Sticky footer
+- Fully responsive: works on desktop and smaller viewports
+- Drawer navigation that collapses/expands and adapts to header height
+
+### 🔐 Authentication & Authorization
+- Google OAuth via **NextAuth**
+- Protected routes using **Next.js middleware**:
+  - `/dashboard`
+  - `/dashboard/data`
+  - `/dashboard/profile`
+  - `/dashboard/settings`
+- Custom auth pages:
+  - Sign in, Sign out, Error, New User, Verify Request
+
+### 📊 Dashboard
+- Line chart: **Transactions per day** (Recharts)
+- KPI cards:
+  - Total Sales
+  - Total Value
+  - Average Order Value
+  - Conversion Rate
+- Donut charts per user type with legend & labels
+
+### 📁 Data Table
+- **MUI Data Grid** with:
+  - Sorting
+  - Pagination
+  - Checkbox row selection
+  - Custom styling for dark theme
+
+### 🎨 Theming
+- Custom **MUI light/dark themes**
+- Theme toggle on the AppBar
+- Charts and tables styled to match theme
+- Consistent typography & spacing system
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **UI Library:** Material UI
+- **Charts:** Recharts
+- **Auth:** NextAuth (Google OAuth)
+- **Deployment:** Vercel
+
+---
+
+
+
+
+
+## 📂 Project Structure (high-level)
+
+```text
+src/
+  app/
+    api/auth/[...nextauth]/route.ts   # NextAuth configuration
+    auth/                             # Custom auth pages
+    dashboard/                        # Dashboard routes (home, data, profile, settings)
+    components/
+      Dashboard/
+      DataChart/
+      Footer/
+      Header/
+      Layout/
+      Login/
+      SideMenu/
+  styles/ (if applicable)
+  middleware.ts                       # Protected routes via withAuth
+
+
+---
+
+## 📱 Running the Project Locally
+git clone https://github.com/Alan23bh/mui-data-analytics-dashboard.git
+cd mui-data-analytics-dashboard
+
+# install dependencies
+yarn install   # or npm install
+
+# create .env.local and add your NextAuth + Google credentials
+# NEXTAUTH_URL=http://localhost:3000
+# NEXTAUTH_SECRET=your-secret
+# GOOGLE_CLIENT_ID=...
+# GOOGLE_CLIENT_SECRET=...
+
+# run dev server
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# visit http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
