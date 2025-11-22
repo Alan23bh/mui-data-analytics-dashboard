@@ -35,8 +35,7 @@ export default withAuth({
   callbacks: {
     authorized({ token }) {
       // only allow access if we have a token
-      // return !!token;
-      return true;
+      return !!token;
     },
   },
 });
