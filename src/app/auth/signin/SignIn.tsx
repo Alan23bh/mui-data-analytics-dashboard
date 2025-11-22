@@ -15,7 +15,7 @@ export const SignIn = () => {
         alignItems: "center",
       }}
     >
-      <h2>{session ? "Thank you for logging in" : "Please log in"}</h2>
+      <h2>{session ? "Thank you for logging in" : "Hello"}</h2>
       <Login />
     </Box>
   );
