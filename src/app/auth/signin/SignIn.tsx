@@ -3,7 +3,7 @@ import { useSession } from "next-auth/react";
 import { Box } from "@mui/material";
 import Login from "@/app/components/Login/Login";
 
-export const SignIn = () => {
+export const SignIn = (p0: string, p1: { callbackUrl: string }) => {
   const { data: session } = useSession();
 
   return (
@@ -15,7 +15,7 @@ export const SignIn = () => {
         alignItems: "center",
       }}
     >
-      <h2>{session ? "Thank you for logging in" : "Hello"}</h2>
+      <h2>{session ? "Thank you for logging in" : ""}</h2>
       <Login />
     </Box>
   );

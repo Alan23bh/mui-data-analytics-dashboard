@@ -7,6 +7,7 @@ import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import scss from "./Footer.module.scss";
 import SignIn from "@/app/auth/signin/SignIn";
+import { signIn } from "next-auth/react";
 
 const Footer = () => {
   const { data: session } = useSession();
@@ -45,7 +46,11 @@ const Footer = () => {
             <Button
               variant={"text"}
               color={session ? "error" : "success"}
-              onClick={() => (session ? signOut() : SignIn())}
+              onClick={() =>
+                session
+                  ? signOut()
+                  : signIn("google", { callbackUrl: "/dashboard" })
+              }
             >
               {session ? "Sign Out" : "Sign In"}
             </Button>
