@@ -40,9 +40,17 @@ export const Profile = () => {
   };
   return (
     <>
-      <h1>Profile</h1>
+      <Typography
+        variant="h1"
+        sx={{ fontSize: 40, textAlign: "center", mt: 4 }}
+      >
+        Profile
+      </Typography>
       <Box>
-        <Typography variant={"h4"} sx={{ paddingBottom: 4 }}>
+        <Typography
+          variant={"h4"}
+          sx={{ paddingBottom: 4, textAlign: "center" }}
+        >
           Hey {session ? session?.user?.name : "User"}, welcome to your profile
           😎
         </Typography>

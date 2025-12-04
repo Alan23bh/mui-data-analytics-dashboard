@@ -1,9 +1,12 @@
 "use client";
+import { spacing } from "@mui/system";
+
 import Box from "@mui/material/Box";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import Typography from "@mui/material/Typography";
 
 const columns: GridColDef<(typeof rows)[number]>[] = [
-  { field: "id", headerName: "ID", width: 200 },
+  { field: "id", headerName: "ID", width: 190 },
   {
     field: "firstName",
     headerName: "First name",
@@ -47,13 +50,21 @@ const rows = [
 
 export const data = () => {
   return (
-    <Box sx={{ height: "100%", width: "100%" }}>
-      <h1>Data</h1>
-      <p>
+    <Box sx={{ height: "100%", width: "100%", pt: 3, pl: 2 }}>
+      <Typography
+        variant="h1"
+        sx={{ fontSize: 40, textAlign: "center", mb: 1 }}
+      >
+        Data
+      </Typography>
+      <Typography
+        variant="subtitle2"
+        sx={{ fontSize: 18, textAlign: "center", pt: 2, pb: 4 }}
+      >
         The bestest of data available here at your finger tips in table form.
         This could be a whole section of data that is available for users to
         deep dive further into the numbers/stats.
-      </p>
+      </Typography>
       <DataGrid
         rows={rows}
         columns={columns}

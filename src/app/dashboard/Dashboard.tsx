@@ -12,7 +12,7 @@ export const Dashboard = () => {
         spacing={4}
         mt={2}
         justifyContent={"center"}
-        alignItems={"flex-center"}
+        alignItems={"flex-start"}
         sx={{ width: "100%" }}
       >
         <Grid size={{ xs: 12 }}>

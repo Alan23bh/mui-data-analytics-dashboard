@@ -46,8 +46,20 @@ export const Settings = () => {
   };
   return (
     <>
-      <h1>Settings</h1>
-      <Box>
+      <Typography
+        variant="h1"
+        sx={{ fontSize: 40, textAlign: "center", pt: 4 }}
+      >
+        Settings
+      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          mt: 4,
+        }}
+      >
         <Typography variant="h4" gutterBottom>
           DashBoard Features
         </Typography>

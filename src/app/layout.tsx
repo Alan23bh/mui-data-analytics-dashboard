@@ -41,7 +41,7 @@ export default function RootLayout({
               }}
             >
               <Header />
-              <Box sx={{ flex: 1, display: "flex" }}>
+              <Box sx={{ flex: 1, display: "block" }}>
                 <Layout>{children}</Layout>
               </Box>
               <Footer />
