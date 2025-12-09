@@ -73,7 +73,7 @@ _(Best viewed on desktop, but fully responsive.)_
 
 
 
-## 📂 Project Structure (high-level)
+## 📂 Project Structure
 
 ```text
 src/
