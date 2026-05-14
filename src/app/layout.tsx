@@ -31,25 +31,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <MuiThemeProvider>
-          <Providers>
-            <Box
-              sx={{
-                minHeight: "100vh",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <Header />
-              <Box sx={{ flex: 1, display: "block" }}>
-                <Layout>{children}</Layout>
-              </Box>
-              <Footer />
+        <Providers>
+          <Box
+            sx={{
+              minHeight: "100vh",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <Header />
+            <Box sx={{ flex: 1, display: "block" }}>
+              <Layout>{children}</Layout>
             </Box>
+            <Footer />
+          </Box>
 
-            <CssBaseline />
-          </Providers>
-        </MuiThemeProvider>
+          <CssBaseline />
+        </Providers>
       </body>
     </html>
   );

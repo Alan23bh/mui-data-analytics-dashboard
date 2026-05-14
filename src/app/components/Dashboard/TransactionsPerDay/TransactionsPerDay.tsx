@@ -1,68 +1,50 @@
 "use client";
-import { useTheme } from "@mui/system";
 
-import { Grid, Paper, Typography, Card } from "@mui/material";
-// import { useThemeProps } from "@mui/material/styles";
+import { Grid, Paper, Typography, Card, Box } from "@mui/material";
 import scss from "./TransactionsPerDay.module.scss";
 import DataChart from "../../DataChart/DataChart";
 import { lineChartData } from "../MockData";
 
-export type TransactionCardType = {
-  title: string;
-  value: string;
-  changeValue: string;
-};
-
-export type TransactionsPerDayProps = {
-  data: TransactionCardType;
-};
+const sideStats = [
+  { title: "Total Products", value: "1,275", change: "+28.7%" },
+  { title: "Buy-to-detail", value: "4.40%", change: "+8.4%" },
+  { title: "Refunds", value: "0", change: "Stable" },
+];
 
 const TransactionsPerDay = () => {
-  const theme = useTheme();
   return (
-    <Grid container spacing={2} className={scss.wrapper}>
-      <Paper className={scss.transactions}>
-        <div className={scss.chart}>
-          <Typography>Transactions per day</Typography>
-          <DataChart type={"line"} data={lineChartData} />
+    <Paper className={scss.transactions}>
+      <div className={scss.chartSection}>
+        <div className={scss.chartHeader}>
+          <div>
+            <Typography className={scss.eyebrow}>Overview</Typography>
+            <Typography className={scss.title}>Transactions per day</Typography>
+          </div>
+          <Typography className={scss.subcopy}>
+            Daily transaction activity across the current reporting period.
+          </Typography>
         </div>
-        <div className={scss.cardWrapper}>
-          <Card className={scss.card} variant={"outlined"}>
-            <div className={scss.cardTitle}>
-              <Typography>Total Products</Typography>
-            </div>
-            <div className={scss.cardValue}>
-              <Typography>1.275</Typography>
-              <Typography color={theme.palette.success.main} fontSize={14}>
-                428.7%
-              </Typography>
-            </div>
-          </Card>
-          <Card className={scss.card} variant={"outlined"}>
-            <div className={scss.cardTitle}>
-              <Typography>Buy-to-detail</Typography>
-            </div>
-            <div className={scss.cardValue}>
-              <Typography>4.40%</Typography>
-              <Typography color={theme.palette.success.main} fontSize={14}>
-                899.4%
-              </Typography>
-            </div>
-          </Card>
-          <Card className={scss.card} variant={"outlined"}>
-            <div className={scss.cardTitle}>
-              <Typography>Refunds</Typography>
-            </div>
-            <div className={scss.cardValue}>
-              <Typography>0</Typography>
-              <Typography color={theme.palette.success.main} fontSize={14}>
-                0
-              </Typography>
-            </div>
-          </Card>
+
+        <div className={scss.chartArea}>
+          <DataChart type="line" data={lineChartData} />
         </div>
-      </Paper>
-    </Grid>
+      </div>
+
+      <div className={scss.cardWrapper}>
+        {sideStats.map((stat) => (
+          <Card key={stat.title} className={scss.card} variant="outlined">
+            <Typography className={scss.cardLabel}>{stat.title}</Typography>
+            <Typography className={scss.cardMetric}>{stat.value}</Typography>
+            <Box className={scss.cardMeta}>
+              <span className={scss.cardChange}>{stat.change}</span>
+              <Typography className={scss.cardContext}>
+                vs prior period
+              </Typography>
+            </Box>
+          </Card>
+        ))}
+      </div>
+    </Paper>
   );
 };
 

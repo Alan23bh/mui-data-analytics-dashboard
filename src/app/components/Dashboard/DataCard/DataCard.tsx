@@ -1,33 +1,44 @@
-import { Paper, Typography, IconButton } from "@mui/material";
-import { Tooltip } from "@mui/material";
-import { InfoOutlined } from "@mui/icons-material";
+import { Paper, Typography, IconButton, Tooltip, Box } from "@mui/material";
+import InfoOutlined from "@mui/icons-material/InfoOutlined";
+import TrendingUpRounded from "@mui/icons-material/TrendingUpRounded";
 import scss from "./DataCard.module.scss";
 
 export type DataCardProps = {
   title: string;
   value: string;
   description: string;
+  trend?: string;
 };
 
-const DataCard = (props: DataCardProps) => {
-  const { title, value, description } = props;
+const DataCard = ({
+  title,
+  value,
+  description,
+  trend = "+12.4%",
+}: DataCardProps) => {
   return (
     <Paper className={scss.dataCard}>
-      <div className={scss.header}>
-        <Typography color={"grey"}>{title}</Typography>
+      <div className={scss.topRow}>
+        <Typography className={scss.label}>{title}</Typography>
         <Tooltip
-          title={
-            <Typography
-              fontSize={16}
-            >{`${description} which is ${value}`}</Typography>
-          }
+          title={<Typography fontSize={14}>{description}</Typography>}
+          arrow
         >
-          <IconButton>
-            <InfoOutlined />
+          <IconButton size="small" className={scss.infoButton}>
+            <InfoOutlined fontSize="inherit" />
           </IconButton>
         </Tooltip>
       </div>
-      <Typography fontSize={"h3"}>{value}</Typography>
+
+      <Typography className={scss.value}>{value}</Typography>
+
+      <Box className={scss.footerRow}>
+        <span className={scss.trend}>
+          <TrendingUpRounded fontSize="inherit" />
+          {trend}
+        </span>
+        <Typography className={scss.caption}>vs last period</Typography>
+      </Box>
     </Paper>
   );
 };

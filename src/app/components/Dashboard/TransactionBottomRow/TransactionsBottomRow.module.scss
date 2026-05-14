@@ -1,20 +1,45 @@
 .bottomRow {
-  padding-bottom: 3rem;
-
-  @media screen and (min-width: 900px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
+  padding-bottom: 2.5rem;
 }
 
 .dataCard {
-  position: relative;
-  top: 1rem;
   height: 100%;
-  //   width: calc(100% - 0.1rem);
   width: 100%;
-  p {
-    padding: 0.5rem 1rem;
-    margin: 0;
-    text-align: center;
-  }
+  padding: 1rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cardTitle {
+  font-size: 0.9rem !important;
+  color: #94a3b8;
+}
+
+.cardValue {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+}
+
+.chartWrap {
+  min-height: 220px;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cardMeta {
+  font-size: 0.8rem !important;
+  color: #94a3b8;
 }

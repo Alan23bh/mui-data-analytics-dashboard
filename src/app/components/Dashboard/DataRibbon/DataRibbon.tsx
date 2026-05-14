@@ -1,68 +1,47 @@
-import { IconButton, Tooltip, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
-
 import DataCard from "../DataCard/DataCard";
 
 const DataRibbon = () => {
   return (
     <Grid
-      spacing={3}
       container
-      gap={1.5}
-      sx={{ width: "100%", mt: 2, mb: 5 }}
-      justifyContent="center"
+      spacing={2}
+      sx={{ width: "100%", mt: 0.5, mb: 3 }}
       alignItems="stretch"
     >
-      {/* Card 1 */}
-      <Grid
-        textAlign={"center"}
-        columns={{ xs: 12, sm: 6, md: 3, lg: 3 }}
-        size={{ xs: 12, sm: 6, md: 3, lg: 3 }}
-      >
+      <Grid size={{ xs: 12, sm: 6, xl: 3 }}>
         <DataCard
-          title={"Total Sales"}
-          value={"462"}
-          description={
-            "The totals of all DataSoft products in the current financial year"
-          }
+          title="Total sales"
+          value="462"
+          description="Total completed sales recorded in the current financial year."
+          trend="+8.2%"
         />
       </Grid>
 
-      <Grid
-        textAlign={"center"}
-        columns={{ xs: 12, sm: 6, md: 3, lg: 3 }}
-        size={{ xs: 12, sm: 6, md: 3, lg: 3 }}
-      >
+      <Grid size={{ xs: 12, sm: 6, xl: 3 }}>
         <DataCard
-          title={"Total Value"}
-          value={"$25,732.53"}
-          description={"The total sales of the current financial year"}
+          title="Total value"
+          value="$25,732.53"
+          description="Total revenue generated during the current financial year."
+          trend="+12.6%"
         />
       </Grid>
 
-      <Grid
-        textAlign={"center"}
-        columns={{ xs: 12, sm: 6, md: 3, lg: 3 }}
-        size={{ xs: 12, sm: 6, md: 3, lg: 3 }}
-      >
+      <Grid size={{ xs: 12, sm: 6, xl: 3 }}>
         <DataCard
-          title={"Avg. Order Value"}
-          value={"$159.30"}
-          description={
-            "The average order value for all sales this current financial year"
-          }
+          title="Avg. order value"
+          value="$159.30"
+          description="Average value of completed purchases in the current financial year."
+          trend="+4.1%"
         />
       </Grid>
 
-      <Grid
-        textAlign={"center"}
-        columns={{ xs: 12, sm: 6, md: 3, lg: 3 }}
-        size={{ xs: 12, sm: 6, md: 3, lg: 3 }}
-      >
+      <Grid size={{ xs: 12, sm: 6, xl: 3 }}>
         <DataCard
-          title={"Conversion Rate"}
-          value={"0.61%"}
-          description={"How many pitches become sales"}
+          title="Conversion rate"
+          value="0.61%"
+          description="Share of pitches that convert into completed sales."
+          trend="+1.3%"
         />
       </Grid>
     </Grid>
@@ -70,32 +49,3 @@ const DataRibbon = () => {
 };
 
 export default DataRibbon;
-
-{
-  /* <Paper sx={{ padding: "1rem", height: "100%" }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Typography fontSize={"h6"} color={"lightslategrey"}>
-            Total Sales
-          </Typography>
-          <Tooltip
-            title={
-              <Typography fontSize={"16"}>
-                The totals of all DataSoft products in the current financial
-                year which is 462
-              </Typography>
-            }
-          >
-            <IconButton>
-              <InfoOutlined />
-            </IconButton>
-          </Tooltip>
-        </div>
-        <Typography fontSize={"h4"}>462</Typography>
-      </Paper> */
-}
